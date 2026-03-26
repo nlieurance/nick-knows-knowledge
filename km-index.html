@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nick Lieurance — Knowledge Management & AI Content Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --forest:    #1e3a2f;
+  --leaf:      #2d5a45;
+  --sage:      #4a7c5f;
+  --ivory:     #f7f4ee;
+  --paper:     #efe9dd;
+  --parchment: #e6dece;
+  --gold:      #b8860b;
+  --gold-lt:   #d4a017;
+  --ink:       #1a1a18;
+  --muted:     #6b6b5e;
+  --border:    rgba(26,26,24,0.1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  background: var(--ivory);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* Ruled-line texture */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 27px,
+    rgba(26,26,24,0.04) 27px, rgba(26,26,24,0.04) 28px
+  );
+}
+
+nav, section, div, header, footer { position: relative; z-index: 1; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2rem 3rem;
+  background: rgba(30,58,47,0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(184,134,11,0.25);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem; font-weight: 600; letter-spacing: 0.05em;
+  color: var(--ivory); text-decoration: none;
+}
+.nav-logo span { color: var(--gold-lt); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(247,244,238,0.55); text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-lt); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding-top: 4.5rem; overflow: hidden;
+}
+
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem 4rem 5rem 3rem;
+  background: var(--forest);
+  position: relative; overflow: hidden;
+}
+
+/* Decorative ruled lines on hero left */
+.hero-left::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 36px,
+    rgba(247,244,238,0.04) 36px, rgba(247,244,238,0.04) 37px
+  );
+}
+
+/* Vertical gold margin line — like a notebook */
+.hero-left::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; left: 3.5rem;
+  width: 1px; background: rgba(184,134,11,0.25);
+}
+
+.hero-tag {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold-lt); margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.7s 0.2s forwards;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  font-weight: 600; line-height: 1.0; letter-spacing: -0.01em;
+  color: var(--ivory);
+  opacity: 0; animation: fadeUp 0.7s 0.35s forwards;
+}
+.hero-title em { font-style: italic; color: var(--gold-lt); }
+
+.hero-desc {
+  margin-top: 2rem; font-size: 1rem; line-height: 1.8;
+  color: rgba(247,244,238,0.65); max-width: 38ch;
+  font-family: 'Lora', Georgia, serif;
+  opacity: 0; animation: fadeUp 0.7s 0.5s forwards;
+}
+.hero-desc strong { color: var(--ivory); font-weight: 600; }
+
+.hero-cta {
+  margin-top: 2.8rem; display: flex; gap: 1rem; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.7s 0.65s forwards;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center;
+  background: var(--gold); color: var(--forest);
+  padding: 0.8rem 1.8rem; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; font-family: 'Source Serif 4', Georgia, serif;
+  border: 2px solid var(--gold); transition: background 0.2s, color 0.2s;
+}
+.btn-primary:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
+
+.btn-outline {
+  display: inline-flex; align-items: center;
+  background: transparent; color: rgba(247,244,238,0.8);
+  padding: 0.8rem 1.8rem; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; font-family: 'Source Serif 4', Georgia, serif;
+  border: 2px solid rgba(247,244,238,0.25); transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--gold-lt); color: var(--gold-lt); }
+
+/* ── HERO RIGHT — index cards visual ── */
+.hero-right {
+  background: var(--paper);
+  display: flex; align-items: center; justify-content: center;
+  padding: 4rem 3rem; position: relative; overflow: hidden;
+}
+
+/* Subtle grid */
+.hero-right::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--parchment) 1px, transparent 1px),
+    linear-gradient(90deg, var(--parchment) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.6;
+}
+
+.card-stack {
+  position: relative; width: 340px; height: 340px;
+  opacity: 0; animation: fadeIn 1s 0.8s forwards;
+}
+
+/* Stacked index cards */
+.index-card {
+  position: absolute;
+  background: var(--ivory);
+  border: 1px solid var(--parchment);
+  border-top: 4px solid var(--gold);
+  padding: 1.4rem 1.6rem;
+  width: 300px;
+  box-shadow: 2px 4px 18px rgba(26,26,24,0.1);
+}
+.index-card:nth-child(1) { top: 0; left: 40px; transform: rotate(3deg); }
+.index-card:nth-child(2) { top: 20px; left: 20px; transform: rotate(-1.5deg); }
+.index-card:nth-child(3) { top: 40px; left: 0; transform: rotate(0.5deg); }
+
+.card-label {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.6rem;
+}
+.card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem; font-weight: 600; color: var(--forest);
+  margin-bottom: 0.6rem; line-height: 1.3;
+}
+.card-lines { display: flex; flex-direction: column; gap: 0.35rem; }
+.card-line {
+  height: 1px; background: var(--parchment);
+}
+.card-tag {
+  display: inline-block; margin-top: 0.8rem;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.62rem; letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem; background: var(--forest);
+  color: var(--ivory); text-transform: uppercase;
+}
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+  background: var(--forest);
+  padding: 0.85rem 0; overflow: hidden;
+  border-top: 1px solid rgba(184,134,11,0.2);
+  border-bottom: 1px solid rgba(184,134,11,0.2);
+}
+.marquee-track {
+  display: flex; gap: 3rem; white-space: nowrap;
+  animation: marquee 28s linear infinite;
+}
+.marquee-item {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(247,244,238,0.35); flex-shrink: 0;
+}
+.marquee-item span { color: var(--gold); margin-right: 3rem; }
+
+/* ── KM SECTION (dark) ── */
+.km-section {
+  background: var(--forest); padding: 7rem 3rem;
+  position: relative; overflow: hidden;
+}
+.km-section::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 36px,
+    rgba(247,244,238,0.03) 36px, rgba(247,244,238,0.03) 37px
+  );
+}
+/* Gold margin line */
+.km-section::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; left: 3rem;
+  width: 1px; background: rgba(184,134,11,0.2);
+}
+.km-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+  position: relative;
+}
+.km-section .section-label {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1rem; display: block;
+}
+.km-section .section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 600;
+  color: var(--ivory); line-height: 1.15; max-width: 22ch;
+}
+.km-desc {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem; line-height: 1.8;
+  color: rgba(247,244,238,0.6); margin-top: 1.4rem;
+}
+.km-desc strong { color: var(--ivory); font-weight: 600; }
+
+/* Capability cards */
+.km-cards { display: flex; flex-direction: column; gap: 0; }
+.km-card {
+  border-top: 1px solid rgba(247,244,238,0.08);
+  padding: 1.5rem 0 1.5rem 1.2rem;
+  position: relative; cursor: default;
+  transition: padding-left 0.25s;
+}
+.km-card::before {
+  content: '';
+  position: absolute; left: 0; top: 1.5rem; bottom: 1.5rem;
+  width: 2px; background: transparent;
+  transition: background 0.25s;
+}
+.km-card:hover { padding-left: 1.6rem; }
+.km-card:hover::before { background: var(--gold); }
+.km-card-num {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.62rem; letter-spacing: 0.18em; color: var(--gold);
+  text-transform: uppercase; margin-bottom: 0.4rem;
+}
+.km-card-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.95rem; font-weight: 600; color: var(--ivory); margin-bottom: 0.35rem;
+}
+.km-card-body {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.85rem; color: rgba(247,244,238,0.45); line-height: 1.65;
+}
+
+/* ── WORK SECTION ── */
+.work-section { background: var(--ivory); padding: 7rem 3rem; }
+.work-header { max-width: 1200px; margin: 0 auto 3.5rem; }
+
+.section-label {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.9rem; display: block;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600;
+  line-height: 1.1; color: var(--forest);
+}
+
+.cases-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--parchment);
+  border: 1px solid var(--parchment);
+}
+@media (max-width: 900px) { .cases-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .cases-grid { grid-template-columns: 1fr; } }
+
+.case-card {
+  background: var(--ivory);
+  padding: 2rem 1.8rem;
+  display: flex; flex-direction: column; gap: 0.9rem;
+  text-decoration: none; color: inherit;
+  transition: background 0.2s;
+  position: relative; overflow: hidden;
+}
+.case-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--gold);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s;
+}
+.case-card:hover { background: var(--paper); }
+.case-card:hover::after { transform: scaleX(1); }
+
+.case-featured {
+  grid-column: span 2;
+  background: var(--forest);
+}
+.case-featured:hover { background: var(--leaf); }
+
+.case-tag {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold);
+}
+.case-featured .case-tag { color: var(--gold-lt); }
+
+.case-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem; font-weight: 600; line-height: 1.25;
+  color: var(--forest);
+}
+.case-featured .case-title { font-size: 1.65rem; color: var(--ivory); }
+
+.case-body {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.85rem; color: var(--muted); line-height: 1.7; flex: 1;
+}
+.case-featured .case-body { color: rgba(247,244,238,0.55); font-size: 0.9rem; }
+
+.case-link {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--forest); display: flex; align-items: center; gap: 0.4rem;
+}
+.case-featured .case-link { color: var(--gold-lt); }
+.case-link::after { content: '→'; transition: transform 0.2s; }
+.case-card:hover .case-link::after { transform: translateX(4px); }
+
+/* ── ABOUT SECTION ── */
+.about-section {
+  background: var(--paper); padding: 7rem 3rem;
+  border-top: 1px solid var(--parchment);
+}
+.about-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: start;
+}
+@media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; gap: 3rem; } }
+
+.about-stats { display: flex; flex-direction: column; gap: 2rem; margin-top: 3rem; }
+.stat-num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 3.5rem; font-weight: 700; color: var(--forest); line-height: 1;
+}
+.stat-num sup { font-size: 1.5rem; }
+.stat-label {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-top: 0.2rem;
+}
+
+.about-text {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1rem; line-height: 1.85; color: #3a3a32;
+}
+.about-text p + p { margin-top: 1.4rem; }
+.about-text strong { font-weight: 600; color: var(--forest); }
+
+.skills-list { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill-tag {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--parchment);
+  background: var(--ivory); color: var(--muted);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.skill-tag:hover { background: var(--forest); color: var(--ivory); border-color: var(--forest); }
+
+/* ── CONTACT ── */
+.contact-section {
+  background: var(--forest); text-align: center;
+  padding: 8rem 3rem; position: relative; overflow: hidden;
+}
+.contact-section::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 36px,
+    rgba(247,244,238,0.03) 36px, rgba(247,244,238,0.03) 37px
+  );
+}
+/* Gold margin lines */
+.contact-section::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; left: 3rem;
+  width: 1px; background: rgba(184,134,11,0.2);
+  box-shadow: calc(100vw - 6rem) 0 0 rgba(184,134,11,0.2);
+}
+.contact-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+.contact-section .section-label { margin-bottom: 1.2rem; }
+.contact-section .section-title { color: var(--ivory); margin: 0 auto 1.4rem; font-size: clamp(2.2rem, 4.5vw, 4rem); }
+.contact-desc {
+  font-family: 'Lora', Georgia, serif; font-size: 1rem; line-height: 1.75;
+  color: rgba(247,244,238,0.55); margin-bottom: 3rem;
+}
+.contact-email {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic; font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  color: var(--gold-lt); text-decoration: none;
+  border-bottom: 1px solid rgba(212,160,23,0.35);
+  padding-bottom: 0.2rem; transition: color 0.2s, border-color 0.2s;
+}
+.contact-email:hover { color: var(--ivory); border-color: var(--ivory); }
+
+/* ── FOOTER ── */
+footer {
+  background: #111;
+  color: rgba(247,244,238,0.25);
+  padding: 1.4rem 3rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+}
+footer a { color: inherit; text-decoration: none; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s, transform 0.65s; }
+.reveal.visible { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  nav { padding: 1.1rem 1.5rem; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { min-height: 50vh; }
+  .hero-left { padding: 4rem 1.5rem; }
+  .hero-left::after { left: 2rem; }
+  .km-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .work-section, .about-section, .km-section { padding: 5rem 1.5rem; }
+  .km-section::after { display: none; }
+  .contact-section { padding: 5rem 1.5rem; }
+  .contact-section::after { display: none; }
+  body::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Nick Lieurance<span> ·</span></a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#km">Knowledge & AI</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0">
+  <div class="hero-left">
+    <p class="hero-tag">Knowledge Management &amp; AI Content Specialist</p>
+    <h1 class="hero-title">Knowledge<br>built to<br><em>last.</em></h1>
+    <p class="hero-desc">
+      I'm Nick — a content and knowledge specialist who builds documentation systems that help people resolve issues faster. Specializing in <strong>knowledge governance, AI-ready content architecture,</strong> and support documentation that scales.
+    </p>
+    <div class="hero-cta">
+      <a href="#work" class="btn-primary">See my work</a>
+      <a href="#contact" class="btn-outline">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="card-stack">
+      <div class="index-card">
+        <div class="card-label">Article · In Review</div>
+        <div class="card-title">Troubleshooting: VuLink connectivity errors</div>
+        <div class="card-lines">
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+        </div>
+        <span class="card-tag">Support Ops</span>
+      </div>
+      <div class="index-card">
+        <div class="card-label">Audit · Q1 2024</div>
+        <div class="card-title">Knowledge gap analysis: monetization workflows</div>
+        <div class="card-lines">
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+        </div>
+        <span class="card-tag">Governance</span>
+      </div>
+      <div class="index-card">
+        <div class="card-label">Published · Live</div>
+        <div class="card-title">UX Writing Guidelines — In-Situ Style System</div>
+        <div class="card-lines">
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+        </div>
+        <span class="card-tag">Still in use</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Knowledge Governance<span> ✦</span></span>
+    <span class="marquee-item">Content Lifecycle Management<span> ✦</span></span>
+    <span class="marquee-item">AI-Ready Documentation<span> ✦</span></span>
+    <span class="marquee-item">Support Knowledge Systems<span> ✦</span></span>
+    <span class="marquee-item">Content Auditing<span> ✦</span></span>
+    <span class="marquee-item">Information Architecture<span> ✦</span></span>
+    <span class="marquee-item">Cross-functional Collaboration<span> ✦</span></span>
+    <span class="marquee-item">Zendesk · Guru · Glean<span> ✦</span></span>
+    <span class="marquee-item">Knowledge Governance<span> ✦</span></span>
+    <span class="marquee-item">Content Lifecycle Management<span> ✦</span></span>
+    <span class="marquee-item">AI-Ready Documentation<span> ✦</span></span>
+    <span class="marquee-item">Support Knowledge Systems<span> ✦</span></span>
+    <span class="marquee-item">Content Auditing<span> ✦</span></span>
+    <span class="marquee-item">Information Architecture<span> ✦</span></span>
+    <span class="marquee-item">Cross-functional Collaboration<span> ✦</span></span>
+    <span class="marquee-item">Zendesk · Guru · Glean<span> ✦</span></span>
+  </div>
+</div>
+
+<!-- KM & AI SECTION -->
+<div class="km-section" id="km">
+  <div class="km-inner">
+    <div>
+      <span class="section-label reveal">Knowledge Management &amp; AI</span>
+      <h2 class="section-title reveal" style="transition-delay:0.1s">Good knowledge is the foundation AI builds on.</h2>
+      <p class="km-desc reveal" style="transition-delay:0.2s">
+        AI-assisted support is only as good as the knowledge underneath it. I build and govern content systems that are <strong>structured for findability</strong>, <strong>maintained for accuracy</strong>, and optimized so AI search and recommendations surface the right answer — not the closest approximation.
+      </p>
+      <p class="km-desc reveal" style="transition-delay:0.3s; margin-top:1rem">
+        I've used AI tools to accelerate drafting and auditing while keeping a quality-first approach — validating outputs, catching outdated guidance, and improving the source content that AI systems depend on.
+      </p>
+    </div>
+    <div class="km-cards">
+      <div class="km-card reveal" style="transition-delay:0.1s">
+        <div class="km-card-num">01</div>
+        <div class="km-card-title">Content Auditing &amp; Remediation</div>
+        <div class="km-card-body">Systematically identifying outdated guidance, gaps, and duplication — then executing a prioritized plan to fix it before it reaches agents or AI systems.</div>
+      </div>
+      <div class="km-card reveal" style="transition-delay:0.18s">
+        <div class="km-card-num">02</div>
+        <div class="km-card-title">AI-Ready Knowledge Structure</div>
+        <div class="km-card-body">Structuring articles, taxonomy, and naming conventions so AI search and recommendations surface the right content — not the closest approximation.</div>
+      </div>
+      <div class="km-card reveal" style="transition-delay:0.26s">
+        <div class="km-card-num">03</div>
+        <div class="km-card-title">Governance &amp; Content Lifecycle</div>
+        <div class="km-card-body">Review cadences, approval workflows, versioning, and ownership models that keep documentation accurate, compliant, and trustworthy at scale.</div>
+      </div>
+      <div class="km-card reveal" style="transition-delay:0.34s">
+        <div class="km-card-num">04</div>
+        <div class="km-card-title">Cross-functional Stakeholder Management</div>
+        <div class="km-card-body">Driving timely SME reviews, aligning Product, Support, and Operations, and ensuring knowledge is ready before launches — not scrambled together after.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WORK -->
+<section class="work-section" id="work">
+  <div class="work-header">
+    <span class="section-label reveal">Case Studies</span>
+    <h2 class="section-title reveal" style="transition-delay:0.1s">Documentation systems that delivered results.</h2>
+  </div>
+  <div class="cases-grid">
+
+    <a href="bwai-case-study.html" class="case-card case-featured reveal">
+      <span class="case-tag">AI-Ready Content · SurveyMonkey · 2023</span>
+      <h3 class="case-title">Build with AI: Structuring knowledge for an AI-powered feature</h3>
+      <p class="case-body">As the sole content designer on SurveyMonkey's AI survey builder, I researched how users understood AI, structured sample content for different skill levels, and validated the knowledge architecture through usability testing. The result: the most-used survey creation method on the platform — and a template for structuring knowledge that AI can actually use.</p>
+      <span class="case-link">Read case study</span>
+    </a>
+
+    <a href="vulink-case-study.html" class="case-card reveal" style="transition-delay:0.1s">
+      <span class="case-tag">Technical Documentation · In-Situ</span>
+      <h3 class="case-title">VuLink: End-to-end content lifecycle for a complex product</h3>
+      <p class="case-body">Owned the full content lifecycle for a hardware + software launch — UI copy, quickstart guides, full manual, and online FAQs. 400% of forecast sales, &lt;1% user error rate.</p>
+      <span class="case-link">Read case study</span>
+    </a>
+
+    <a href="faqs-case-study.html" class="case-card reveal" style="transition-delay:0.2s">
+      <span class="case-tag">Knowledge Management · In-Situ</span>
+      <h3 class="case-title">Self-service knowledge base: from zero to hundreds of weekly users</h3>
+      <p class="case-body">Built In-Situ's knowledge system from scratch — requirements, platform evaluation, IA, governance, and ongoing analytics. Reduced support volume, became a rep reference tool.</p>
+      <span class="case-link">Read case study</span>
+    </a>
+
+    <a href="job-architecture.html" class="case-card reveal" style="transition-delay:0.1s">
+      <span class="case-tag">Content Systems · SurveyMonkey</span>
+      <h3 class="case-title">Job Architecture Initiative</h3>
+      <p class="case-body">Drove a cross-functional initiative to audit, restructure, and improve career documentation across SurveyMonkey's Research &amp; Design org.</p>
+      <span class="case-link">Read case study</span>
+    </a>
+
+    <a href="ux-writing-guidelines.html" class="case-card reveal" style="transition-delay:0.2s">
+      <span class="case-tag">Content Governance · In-Situ</span>
+      <h3 class="case-title">A governance system that still runs without me</h3>
+      <p class="case-body">Built and evangelized a content governance framework across three subsidiaries — mapped to UX principles, socialized across engineering and design, still in active use today.</p>
+      <span class="case-link">Read case study</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div>
+      <span class="section-label reveal">About Nick</span>
+      <h2 class="section-title reveal" style="transition-delay:0.1s">Knowledge built to last. Systems built to scale.</h2>
+      <div class="about-stats">
+        <div class="reveal" style="transition-delay:0.2s">
+          <div class="stat-num">10<sup>+</sup></div>
+          <div class="stat-label">Years in technical content</div>
+        </div>
+        <div class="reveal" style="transition-delay:0.3s">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Knowledge systems built from scratch</div>
+        </div>
+        <div class="reveal" style="transition-delay:0.4s">
+          <div class="stat-num">#1</div>
+          <div class="stat-label">Fastest-selling device in In-Situ history</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="about-text reveal" style="transition-delay:0.15s">
+        <p>I'm a content and knowledge specialist who has spent a career building documentation systems that help people resolve problems faster — from hardware manuals and self-service FAQs to AI-powered product experiences.</p>
+        <p>I've owned the full content lifecycle across multiple organizations: auditing existing libraries, identifying gaps, establishing governance frameworks, and producing actionable guidance that frontline teams can actually use. I know how to take an inherited knowledge base and make it better — not just bigger.</p>
+        <p>I care deeply about <strong>AI-ready knowledge</strong> — structuring content so it works well with search, recommendations, and agent-assist tools, not just human readers. And I understand the quality-first discipline that requires: validating outputs, flagging outdated guidance, and improving the source content AI systems depend on.</p>
+        <p>I'm also a <strong>cross-functional driver</strong>. I've aligned engineers, designers, product managers, and support teams around knowledge systems — and I know how to keep reviews moving and documentation ready before launches, not after.</p>
+      </div>
+      <div class="skills-list reveal" style="transition-delay:0.3s">
+        <span class="skill-tag">Knowledge Governance</span>
+        <span class="skill-tag">Content Auditing</span>
+        <span class="skill-tag">AI-Ready Documentation</span>
+        <span class="skill-tag">Content Lifecycle Management</span>
+        <span class="skill-tag">Information Architecture</span>
+        <span class="skill-tag">Self-Service Knowledge Bases</span>
+        <span class="skill-tag">Technical Writing</span>
+        <span class="skill-tag">Support Operations</span>
+        <span class="skill-tag">Zendesk Guide</span>
+        <span class="skill-tag">Cross-functional Leadership</span>
+        <span class="skill-tag">SME Collaboration</span>
+        <span class="skill-tag">Content Strategy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <span class="section-label">Let's work together</span>
+    <h2 class="section-title">Got a knowledge system that needs an owner?</h2>
+    <p class="contact-desc">I'm available for full-time opportunities. Whether you need someone to audit and rebuild an existing knowledge library, establish governance from scratch, or ensure your content is ready for AI-assisted support — let's talk.</p>
+    <a href="mailto:writingandwoodworking@gmail.com" class="contact-email">writingandwoodworking@gmail.com</a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Nick Lieurance</span>
+  <span>Knowledge Management &amp; AI Content Specialist</span>
+  <a href="#">nickwritescopy.com</a>
+</footer>
+
+<script>
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+</script>
+</body>
+</html>

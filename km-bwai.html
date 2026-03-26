@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Ready Content: Build with AI — Nick Lieurance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="km-shared.css">
+<style>
+  .hero-banner {
+    margin-top: 4.5rem;
+    background: var(--forest);
+    height: 300px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .hero-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      transparent, transparent 36px,
+      rgba(247,244,238,0.04) 36px, rgba(247,244,238,0.04) 37px
+    );
+  }
+  .hero-banner::after {
+    content: '';
+    position: absolute; top: 0; bottom: 0; left: 3rem;
+    width: 1px; background: rgba(184,134,11,0.25);
+  }
+  .hero-banner-inner { position: relative; z-index: 1; text-align: center; padding: 0 2rem; }
+  .hero-banner-tag {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem; display: block;
+  }
+  .hero-banner-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 3.2rem); font-weight: 600;
+    color: var(--ivory); line-height: 1.1; letter-spacing: -0.01em;
+  }
+  .hero-banner-title em { font-style: italic; color: var(--gold-lt); }
+
+  .results-bar {
+    background: var(--leaf);
+    padding: 2rem 3rem;
+    border-bottom: 1px solid rgba(184,134,11,0.15);
+  }
+  .results-bar-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; gap: 4rem; align-items: center; flex-wrap: wrap;
+  }
+  .results-bar-label {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); flex-shrink: 0;
+  }
+  .results-bar-stats { display: flex; gap: 4rem; flex-wrap: wrap; }
+  .results-stat-num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--ivory); line-height: 1;
+  }
+  .results-stat-label {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.78rem; color: rgba(247,244,238,0.5); margin-top: 0.2rem;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Nick Lieurance<span> ·</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="index.html#km">Knowledge & AI</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<div class="hero-banner">
+  <div class="hero-banner-inner">
+    <span class="hero-banner-tag">Case Study · SurveyMonkey · AI-Ready Content</span>
+    <h1 class="hero-banner-title">Build with <em>AI</em></h1>
+  </div>
+</div>
+<div class="results-bar">
+  <div class="results-bar-inner">
+    <div class="results-bar-label">Impact</div>
+    <div class="results-bar-stats"><div class="results-stat"><div class="results-stat-num">#1</div><div class="results-stat-label">Survey creation method by activations</div></div>
+<div class="results-stat"><div class="results-stat-num">#2</div><div class="results-stat-label">Survey creation method by deploys</div></div>
+<div class="results-stat"><div class="results-stat-num">Most popular</div><div class="results-stat-label">Way new users create surveys</div></div></div>
+  </div>
+</div>
+<div class="content-wrap">
+  <a href="index.html" class="back-link">Back to work</a>
+  <div class="case-grid">
+    <aside class="case-sidebar"><div class="sidebar-block"><div class="sidebar-label">Company</div><div class="sidebar-value">SurveyMonkey</div></div>
+<div class="sidebar-block"><div class="sidebar-label">Year</div><div class="sidebar-value">2023</div></div>
+<div class="sidebar-block"><div class="sidebar-label">My Role</div><div class="sidebar-value">Sole Content Designer</div></div>
+<div class="sidebar-block"><div class="sidebar-label">Responsibilities</div><div class="sidebar-value">Content research · Knowledge structure · Sample prompt design · Usability validation · Feature naming</div></div>
+<div class="sidebar-block"><div class="sidebar-label">Powered by</div><div class="sidebar-value">OpenAI</div></div></aside>
+    <div class="case-body">
+<h2>Overview</h2>
+<p>Build with AI is SurveyMonkey's AI-powered survey creation feature, built on OpenAI. My role was to design the knowledge layer that made the AI useful — researching how users understood prompts, structuring sample content that worked across skill levels, and validating that the guidance actually helped people get good results. This was knowledge management applied to an AI product.</p>
+
+<figure style="margin:2rem 0">
+  <img src="bwai-homepage.png" alt="The Build with AI interface showing sample prompts" style="width:100%;display:block;">
+  <figcaption style="font-family:'Source Serif 4',Georgia,serif;font-size:0.7rem;letter-spacing:0.08em;color:var(--muted);margin-top:0.75rem;text-transform:uppercase;">The Build with AI homepage — structured sample prompts serve users at every skill level.</figcaption>
+</figure>
+
+<h2>The Challenge</h2>
+<p>The AI could generate surveys — but only if users gave it good instructions. Most users had no idea how to write an effective prompt. The challenge was a knowledge problem: how do you structure guidance that works for a novice who's never used AI, an intermediate user who wants to customize, and an expert who wants to go their own way — all from the same content?</p>
+
+<h2>The Audience</h2>
+<p>All survey authors — novices and experts alike, free and paid. The knowledge architecture had to serve the full range without overwhelming any of them.</p>
+
+<h2>Business Goals</h2>
+<p>High deployment rates (surveys sent to real respondents) and increased conversions from free to paid accounts by demonstrating the value of premium features through the AI experience.</p>
+
+<hr class="divider">
+
+<h2>Process</h2>
+
+<h3>1 — Auditing the Content Landscape</h3>
+<p>I began with structured research: conversation mining to understand where users got stuck, competitive analysis to see how other AI products handled knowledge gaps, and hands-on prompt engineering to understand the problem space. My finding: nearly every AI product used sample content to bridge the knowledge gap. Prompt writing was our central challenge — and it was a content architecture problem, not a copywriting one.</p>
+
+<h3>2 — Naming the Feature</h3>
+<p>I ran a naming workshop with cross-functional stakeholders, aligned on criteria, narrowed to three finalists, and surveyed 200 people with randomized ordering to prevent bias. The winner: <strong>Build with AI</strong> — clear, honest, and immediately understood.</p>
+
+<figure style="margin:2rem 0">
+  <img src="namingCriteria.png" alt="FigJam voting widgets showing stakeholder alignment on naming criteria" style="width:100%;display:block;">
+  <figcaption style="font-family:'Source Serif 4',Georgia,serif;font-size:0.7rem;letter-spacing:0.08em;color:var(--muted);margin-top:0.75rem;text-transform:uppercase;">Stakeholder alignment on naming criteria via FigJam voting widgets.</figcaption>
+</figure>
+
+<h3>3 — Structuring Knowledge for Multiple User Types</h3>
+<p>My research confirmed that a single set of instructions wouldn't serve the range of users coming to this feature. I designed a tiered knowledge system — structured so the same content could serve different needs:</p>
+<ul>
+  <li><strong>Novice users</strong> could use sample prompts as-is, with no modifications needed.</li>
+  <li><strong>Intermediate users</strong> could edit prompts to fit their specific context.</li>
+  <li><strong>Expert users</strong> could model their own prompts after the provided examples.</li>
+</ul>
+<p>I worked with a survey methodology expert to develop and test the right prompt structure — ensuring the outputs were high quality, not just easy to trigger.</p>
+
+<h3>4 — Validating the Knowledge Structure</h3>
+<p>I ran usability testing with five real users to validate the content design, not just the interface. Key questions: Did users understand what a prompt was? Was the purpose of sample content clear without explanation? Did the terminology make sense to non-technical users? All participants completed all tasks — confirming the knowledge structure worked.</p>
+
+<hr class="divider">
+
+<h2>Results</h2>
+<p>Build with AI became the most popular survey creation method on SurveyMonkey — first in activations out of five options, second in deploys. The knowledge structure I designed was central to that outcome: users who would have bounced on a blank prompt field instead succeeded because they had the right scaffolding.</p>
+
+<div class="pull-quote">
+  <p>"SurveyMonkey's Build with AI feature made creating surveys a breeze, even for someone with zero AI experience like myself. In just three attempts, I had a survey ready for board approval."</p>
+  <cite>— SurveyMonkey customer</cite>
+</div>
+</div>
+  </div>
+</div>
+<footer>
+  <span>© 2026 Nick Lieurance</span>
+  <span>Knowledge Management &amp; AI Content Specialist</span>
+  <a href="index.html">nickwritescopy.com</a>
+</footer>
+<script>
+  const obs = new IntersectionObserver(e => e.forEach(el => { if(el.isIntersecting){ el.target.classList.add('visible'); obs.unobserve(el.target); }}), {threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
