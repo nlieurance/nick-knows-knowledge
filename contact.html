@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Nick Lieurance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .contact-page {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 9rem 3rem 5rem;
+    position: relative; overflow: hidden;
+  }
+  .contact-page::before {
+    content: '';
+    position: absolute; inset: 0; z-index: 0;
+    background-image: repeating-linear-gradient(transparent, transparent 27px,
+      rgba(26,26,24,0.04) 27px, rgba(26,26,24,0.04) 28px);
+  }
+  /* Gold margin lines */
+  .contact-page::after {
+    content: '';
+    position: absolute; top: 0; bottom: 0; left: 3rem;
+    width: 1px; background: rgba(184,134,11,0.2); z-index: 0;
+    box-shadow: calc(100vw - 6rem) 0 0 rgba(184,134,11,0.2);
+  }
+  .contact-inner {
+    max-width: 1100px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+    position: relative; z-index: 1;
+  }
+  @media(max-width:780px){ .contact-inner { grid-template-columns: 1fr; gap: 3rem; } }
+  .contact-label {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem; display: block;
+  }
+  .contact-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 600;
+    line-height: 1.05; letter-spacing: -0.01em; color: var(--forest);
+    margin-bottom: 1.4rem;
+  }
+  .contact-title em { font-style: italic; color: var(--gold); }
+  .contact-desc {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem; line-height: 1.8; color: var(--muted); max-width: 40ch;
+  }
+  .availability {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin-top: 2.5rem;
+  }
+  .avail-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: #4a7c5f;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(0.85)} }
+  .contact-right { display: flex; flex-direction: column; gap: 2.5rem; justify-content: center; }
+  .contact-method-label {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.45rem; display: block;
+  }
+  .contact-method-value {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic; font-size: 1.4rem; color: var(--forest);
+    text-decoration: none; border-bottom: 1px solid var(--parchment);
+    padding-bottom: 0.15rem; display: inline-block;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .contact-method-value:hover { color: var(--gold); border-color: var(--gold); }
+  .contact-method-note {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.72rem; color: var(--muted); margin-top: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+  .phone-value {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: normal; font-size: 1.1rem; letter-spacing: 0.05em;
+    color: var(--forest);
+  }
+  hr.divider-short { border: none; border-top: 1px solid var(--parchment); width: 3rem; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Nick Lieurance<span> ·</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="index.html#km">Knowledge &amp; AI</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="contact-page">
+  <div class="contact-inner">
+    <div>
+      <span class="contact-label">Get in touch</span>
+      <h1 class="contact-title">Let's build something<br><em>worth keeping.</em></h1>
+      <p class="contact-desc">Whether you need someone to audit and rebuild an existing knowledge library, establish governance from scratch, or ensure your content is ready for AI-assisted support — I'd love to hear about it.</p>
+      <div class="availability"><div class="avail-dot"></div>Available for new opportunities</div>
+    </div>
+    <div class="contact-right">
+      <div>
+        <span class="contact-method-label">Primary Email</span>
+        <a href="/cdn-cgi/l/email-protection#fc8b8e958895929b9d92988b9393988b938e9795929bbc9b919d9590d29f9391" class="contact-method-value"><span class="__cf_email__" data-cfemail="6215100b160b0c05030c06150d0d06150d10090b0c0522050f030b0e4c010d0f">[email&#160;protected]</span></a>
+      </div>
+      <hr class="divider-short">
+      <div>
+        <span class="contact-method-label">Secure Email</span>
+        <a href="/cdn-cgi/l/email-protection#5a3433393136333f2f283b34393f1a2a28352e353474373f" class="contact-method-value"><span class="__cf_email__" data-cfemail="f49a9d979f989d918186959a9791b484869b809b9ada9991">[email&#160;protected]</span></a>
+        <div class="contact-method-note">via Proton Mail</div>
+      </div>
+      <hr class="divider-short">
+      <div>
+        <span class="contact-method-label">Phone</span>
+        <a href="tel:9705814446" class="contact-method-value phone-value">970-581-4446</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Nick Lieurance</span>
+  <span>Knowledge Management &amp; AI Content Specialist</span>
+  <a href="index.html">nickwritescopy.com

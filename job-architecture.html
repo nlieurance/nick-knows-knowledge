@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Architecture Initiative — Nick Lieurance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .hero-banner {
+    margin-top: 4.5rem; background: #1e1a2a;
+    height: 300px; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .hero-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(transparent, transparent 36px,
+      rgba(247,244,238,0.04) 36px, rgba(247,244,238,0.04) 37px);
+  }
+  .hero-banner::after {
+    content: ''; position: absolute; top: 0; bottom: 0; left: 3rem;
+    width: 1px; background: rgba(184,134,11,0.25);
+  }
+  .hero-banner-inner { position: relative; z-index: 1; text-align: center; padding: 0 2rem; }
+  .hero-banner-tag {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem; display: block;
+  }
+  .hero-banner-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 3.2rem); font-weight: 600;
+    color: var(--ivory); line-height: 1.1; letter-spacing: -0.01em;
+  }
+  .hero-banner-title em { font-style: italic; color: var(--gold-lt); }
+  .results-bar { background: #2a2040; padding: 2rem 3rem; border-bottom: 1px solid rgba(184,134,11,0.15); }
+  .results-bar-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; gap: 4rem; align-items: center; flex-wrap: wrap;
+  }
+  .results-bar-label {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); flex-shrink: 0;
+  }
+  .results-bar-stats { display: flex; gap: 4rem; flex-wrap: wrap; }
+  .results-stat-num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.2rem; font-weight: 700; color: var(--ivory); line-height: 1;
+  }
+  .results-stat-label {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.78rem; color: rgba(247,244,238,0.5); margin-top: 0.2rem;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Nick Lieurance<span> ·</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#work">Work</a></li>
+    <li><a href="index.html#km">Knowledge &amp; AI</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero-banner">
+  <div class="hero-banner-inner">
+    <span class="hero-banner-tag">Case Study · SurveyMonkey · Content Systems &amp; Leadership</span>
+    <h1 class="hero-banner-title">Job Architecture <em>Initiative</em></h1>
+  </div>
+</div>
+<div class="content-wrap" style="padding-top:3rem">
+  <a href="index.html" class="back-link">Back to work</a>
+  <div class="case-grid">
+    <aside class="case-sidebar">
+      <div class="sidebar-block"><div class="sidebar-label">Company</div><div class="sidebar-value">SurveyMonkey</div></div>
+      <div class="sidebar-block"><div class="sidebar-label">Scope</div><div class="sidebar-value">Research &amp; Design organization</div></div>
+      <div class="sidebar-block"><div class="sidebar-label">My Role</div><div class="sidebar-value">Initiative driver &amp; content lead</div></div>
+      <div class="sidebar-block"><div class="sidebar-label">Responsibilities</div><div class="sidebar-value">Documentation · Stakeholder alignment · Workshop design · Synthesis · Project management</div></div>
+      <div class="sidebar-block"><div class="sidebar-label">Outcome</div><div class="sidebar-value">Career documentation stakeholders called "so much easier to use"</div></div>
+    </aside>
+    <div class="case-body">
+
+      <h2>Overview</h2>
+      <p>Career documentation at SurveyMonkey was difficult to navigate and hard to understand. The Research &amp; Design organization launched an initiative to improve it — and I stepped into the role of documenter, communicator, workshop designer, and project driver. This is a case study in owning a complex, cross-functional content initiative from start to finish.</p>
+
+      <hr class="divider">
+
+      <h2>Process</h2>
+
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h4>Establishing a record and guiding principles</h4>
+            <p>The team needed a way to track and communicate its work. I proposed a set of guiding principles and aligned stakeholders around them. By the end of the project, we had a complete slide deck telling the story of the process from start to finish — a reusable artifact for future initiatives.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h4>Surfacing misaligned expectations</h4>
+            <p>I partnered with a product designer to create a structured activity: we asked stakeholders to write examples of each job competency at every level of the hierarchy. The exercise revealed exactly where individual contributor expectations didn't match those of managers — giving us a clear map of where the documentation needed to work harder.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h4>Keeping the team on track</h4>
+            <p>Most team members were heavily focused on product work and struggled to deliver on time. I sent Slack reminders, suggested shifts in responsibility where needed, designed discovery activities, and synthesized findings to keep each phase moving toward its deadline. The project finished on schedule.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h4>Designing a workshop to capture user needs</h4>
+            <p>The company had an in-person event coming up — a rare opportunity. I proposed a simple, low-tech exercise: ask people to draw or diagram what they were looking for in career documentation. Easy to run, easy to analyze. We walked away with a clear blueprint for structure and format.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <div class="step-content">
+            <h4>Translating research into a concept</h4>
+            <p>I produced an initial concept document to show what the research pointed toward. That draft sparked other team members to develop their own concepts. We combined the best ideas from each into a single, coherent piece of documentation that stakeholders described as intuitive and genuinely easy to use.</p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <h2>Takeaway</h2>
+      <p>This project wasn't primarily about writing copy — it was about making a cross-functional initiative actually work. I brought structure, momentum, and facilitation to a team that needed all three. The result was documentation that served both individual contributors and managers, and a process the team could point to with pride.</p>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Nick Lieurance</span>
+  <span>Knowledge Management &amp; AI Content Specialist</span>
+  <a href="index.html">nickwritescopy.com</a>
+</footer>
+<script>
+  const obs = new IntersectionObserver(e => e.forEach(el => {
+    if (el.isIntersecting) { el.target.classList.add('visible'); obs.unobserve(el.target); }
+  }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
